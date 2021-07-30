@@ -1,0 +1,85 @@
+<div class="background">
+    <div class="container">
+        <div class="title">
+            <span>Thông tin sản phẩm</span>
+        </div>
+        <div class="d-flex justify-content-center">
+            <form class="example-form" [formGroup]="information_product" (ngSubmit)="detail()">
+                <div class="row">
+                    <div class="col-12">
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Tên sản phẩm</mat-label>
+                            <input type="text" matInput formControlName="name_product" placeholder="LED of Exciter" required>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6">
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Nhóm sản phẩm</mat-label>
+                            <mat-select formControlName="type_product" required>
+                              <mat-option value="one">Đèn T10</mat-option>
+                              <mat-option value="two">Đèn trợ sáng</mat-option>
+                              <mat-option value="four">Đèn pha</mat-option>
+                              <mat-option value="fine">Đèn xi nhan</mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                    </div>
+
+                    <div class="col-6">
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Mã sản phẩm</mat-label>
+                            <input type="text" matInput formControlName="code_product" placeholder="TX010" required>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6">
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Giá sản phẩm</mat-label>
+                            <input type="" min="1" step="any" matInput formControlName="price_product" placeholder="150.000.000" required>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="col-6">
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Số lượng nhập kho</mat-label>
+                            <input type="number" matInput formControlName="quantity_product" placeholder="20" required>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Mã vị trí trong kho</mat-label>
+                            <input type="text" matInput formControlName="code_save_product" placeholder="R01C04" required>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Hình sản phẩm</mat-label>
+                            <input type="text" matInput formControlName="photo_product" placeholder="https://www.facebook.com/N20Shop" required>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Mô tả sản phẩm</mat-label>
+                    <textarea matInput formControlName="description_product" placeholder="Sản phẩm này được bảo hành 06 tháng"></textarea>
+                </mat-form-field>
+
+                <div class="example-button-row d-flex justify-content-center">
+                    <button mat-raised-button type="submit" [disabled]="!information_product.valid">Xem chi tiết</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div> 
+
+

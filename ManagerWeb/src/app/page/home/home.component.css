@@ -1,0 +1,64 @@
+.background {
+    background-image: url("https://combo.staticflickr.com/ap/build/images/sohp/2020-top-25/Europes_best_View_Fabian_Fortmann.jpg"); 
+    background-attachment: fixed !important;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100vh;
+}
+
+.home-content .policy {
+    padding-top: 30%;
+    animation-name: policy;
+    animation-duration: 2s;
+}
+
+@keyframes policy {
+    from {
+        padding-top: 100px
+        /* padding-left: 0px; */
+    }
+    to {}
+}
+
+button {
+    margin: 5px 10px 5px 0px;
+    padding: 10px 0px 10px 0px;
+    font-size: 18px;
+}
+
+button:hover {
+    background-color: rgb(14, 114, 28);
+    color: white;
+}
+
+.copy {
+    margin-top: 20%;
+    animation-name: copy;
+    animation-duration: 1.5s;
+}
+
+.copy h1 {
+    font-size: 70px;
+    font-weight: 400;
+    color: rgb(243, 66, 66);
+    text-shadow: -1px 0 rgb(105, 105, 105), 0 1px rgb(105, 105, 105),      1px 0 rgb(105, 105, 105), 0 -1px rgb(105, 105, 105)
+}
+
+.copy h3 {
+    font-size: 30px;
+    font-weight: 400;
+    color: rgb(16, 19, 216);
+    text-shadow: -1px 0 rgb(105, 105, 105), 0 1px rgb(105, 105, 105),      1px 0 rgb(105, 105, 105), 0 -1px rgb(105, 105, 105);
+}
+
+@keyframes copy {
+    from {
+        padding-top: 150px
+        /* padding-left: 0px; */
+    }
+    to {}
+}
+
+ 

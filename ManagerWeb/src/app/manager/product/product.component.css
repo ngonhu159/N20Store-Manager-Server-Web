@@ -1,0 +1,27 @@
+.title-standee {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 50px;
+    font-weight: bold;
+    color: red;
+}
+
+.specific {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    font-weight: bold;
+    display: inline;
+    color: rgb(0, 17, 255);
+} 
+
+.content-standee {
+    line-height: 2rem;
+}
+
+.col {
+    margin-bottom: 30px;
+}
+
+img {
+    width: 17.9rem;
+    max-height: 10rem;
+}
