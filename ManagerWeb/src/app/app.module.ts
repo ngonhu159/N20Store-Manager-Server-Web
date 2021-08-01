@@ -44,13 +44,15 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { AddProductComponent } from './manager/add-product/add-product.component';
 import { HomeComponent } from './page/home/home.component';
 import { ProductComponent } from './manager/product/product.component';
+import { ReceiptComponent } from './page/receipt/receipt.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddProductComponent,
     HomeComponent,
-    ProductComponent
+    ProductComponent,
+    ReceiptComponent
   ],
   imports: [
     BrowserModule,

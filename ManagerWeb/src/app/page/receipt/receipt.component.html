@@ -1,0 +1,90 @@
+<mat-drawer-container class="example-container" autosize>
+    <div class="container">
+        <div class="p-4">
+            <div class="row">
+                <h3 class="fst-italic" style="text-align: right; padding-right: 20px;">Mã hóa đơn: 1142</h3>
+                <h3 class="fst-italic" style="text-align: right; padding-right: 20px;">Ngày lập: 01/08/2021</h3>
+                <h1 style="text-align: center; font-weight: bold;">Hóa đơn chi tiết</h1>
+            </div>
+            <div class="d-grid gap-2">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">STT</th>
+                            <th scope="col">Hình sản phẩm</th>
+                            <th scope="col">Tên sản phẩm</th>
+                            <th scope="col">Số lượng</th>
+                            <th scope="col">Đơn giá</th>
+                            <th scope="col">Thành tiền</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>
+                                <img src="https://vcdn.tikicdn.com/ts/tmp/e6/66/41/63371f003d3bf91481fc64592b4dc7a4.jpg"
+                                    alt="">
+                            </td>
+                            <td>Đèn trợ sáng</td>
+                            <td>10</td>
+                            <td>120.000</td>
+                            <td>1.200.000</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>
+                                <img src="https://vn-test-11.slatic.net/p/8/den-led-lui-xi-nhan-phanh-6w-cho-xe-tai-o-to-xe-may-7405-01566653-e0ae20157f5e73f12ca9780c5b73d080.jpg_500x500Q80.jpg"
+                                    alt="">
+                            </td>
+                            <td>Đèn T10</td>
+                            <td>10</td>
+                            <td>120.000</td>
+                            <td>1.200.000</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="2"></th>
+                            <th style="color: red; font-weight: bold;">Tổng</th>
+                            <td style="color: red; font-weight: bold;">20</td>
+                            <td style="color: red; font-weight: bold;"></td>
+                            <td style="color: red; font-weight: bold;">2.400.000</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <mat-radio-group aria-label="Select an option">
+                    <h2>Hình thức thanh toán:</h2>
+                    <mat-radio-button value="1" checked="true">Thanh toán tiền mặt</mat-radio-button>
+                    <mat-radio-button value="2">Thanh toán qua thẻ</mat-radio-button>
+                    <mat-radio-button value="3">Ship COD</mat-radio-button>
+                </mat-radio-group>
+                <br><br>
+                <h2 style="display: inline;">Người nhận:</h2>
+                <p>Nguyễn Văn B, 19/14 Tân Sơn, phường 12, quận Gò Vấp, thành phố Hồ Chí Minh. SĐT: 03931883xx</p>
+            </div>
+
+            <div class="col-lg-6" style="text-align: right;">
+                <mat-radio-group aria-label="Select an option">
+                    <h2>Nhân viên lập</h2><br><br><br>
+                    <p>NV. Nguyễn Văn A</p>
+                </mat-radio-group>
+            </div>
+        </div>
+
+        <div class="d-grid gap-2" style="margin-top: 10px;">
+            <button type="button" color="primary" class="btn" mat-raised-button>
+                Xuất hóa đơn
+            </button>
+        </div>
+        <div class="d-grid gap-2" style="margin-top: 10px;">
+            <button type="button" color="warn" class="btn" mat-raised-button>
+                Hủy hóa đơn
+            </button>
+        </div>
+    </div>
+</mat-drawer-container>

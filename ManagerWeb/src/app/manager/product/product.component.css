@@ -17,11 +17,23 @@
     line-height: 2rem;
 }
 
+.row {
+    margin-right: 0px !important;
+}
+
 .col {
     margin-bottom: 30px;
 }
 
 img {
-    width: 17.9rem;
+    width: 16.8rem;
     max-height: 10rem;
+}
+
+input {
+    border: 0px !important;
+    padding-top: 0px !important;
+    text-align: center; 
+    width: 60px; 
+    margin-top: 0px !important;
 }
