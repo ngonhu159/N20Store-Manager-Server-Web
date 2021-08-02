@@ -30,61 +30,20 @@
                                     <th scope="col">STT</th>
                                     <th scope="col">Sản phẩm</th>
                                     <th scope="col">Số lượng</th>
+                                    <th scope="col">Xóa</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody *ngFor="let equipment of cart; let i=index">
                                 <tr>
-                                    <th scope="row">1</th>
-                                    <td>Đèn trợ sáng</td>
+                                    <th scope="row" class="justify-content-center">{{i + 1}}</th>
+                                    <td>{{ equipment.name }}</td>
                                     <td>
                                         <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                                            <input type="number" value="9">
+                                            <input type="number" value="1">
                                         </div>
                                     </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Đèn pha</td>
                                     <td>
-                                        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                                            <input type="number" value="8">
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>Đèn T10</td>
-                                    <td>
-                                        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                                            <input type="number" value="4">
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">4</th>
-                                    <td>Công tắc SH</td>
-                                    <td>
-                                        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                                            <input type="number" value="3">
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">5</th>
-                                    <td>Mạch điều khiển công tắc</td>
-                                    <td>
-                                        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                                            <input type="number" value="10">
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">6</th>
-                                    <td>Đèn xi nhan</td>
-                                    <td>
-                                        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                                            <input type="number" value="2">
-                                        </div>
+                                        <button type="button" class="btn-close" (click)="Cancel_Product_Cart(equipment)"></button>
                                     </td>
                                 </tr>
                             </tbody>
@@ -92,7 +51,7 @@
                                 <tr>
                                     <th></th>
                                     <th colspan="1">Tổng</th>
-                                    <td style="color: red; font-weight: bold; padding-left: 22px;">36</td>
+                                    <td colspan="2" style="color: red; font-weight: bold; padding-left: 22px;">36</td>
                                 </tr>
                             </tfoot>
                         </table>
@@ -112,268 +71,39 @@
 
         <div class="col-md-8 d-flex justify-content-center">
             <div class="row d-flex justify-content-center">
-                <div class="col d-flex justify-content-center">
-                    <div class="card" style="width: 17rem">
-                        <img src="https://vcdn.tikicdn.com/ts/tmp/e6/66/41/63371f003d3bf91481fc64592b4dc7a4.jpg"
+                <div class="col d-flex justify-content-center" *ngFor="let product of listProduct">
+                    <div class="card" style="width: 17rem; max-height: 30rem;">
+                        <img src= "{{ product.photo }}"
                             class="card-img-top" alt="Sản phẩm" width="50px">
                         <div class="card-body">
-                            <h2 class="card-title">Đèn trợ sáng</h2>
+                            <h2 class="card-title">{{ product.name }}</h2>
                             <p class="card-text">Mã sản phẩm:
                                 <span class="card-text" style="color: blue;">
-                                    TX10
+                                    {{ product.code }}
                                 </span>
                             </p>
                             <p class="card-text">Số lượng:
                                 <span class="card-text" style="color: blue;">
-                                    12
+                                    {{ product.quantity }}
                                 </span>
                                 &nbsp;&nbsp;
                                 <span class="card-text">
                                     Kho lưu:
                                 </span>
                                 <span class="card-text" style="color: blue;">
-                                    R01C12
+                                    {{ product.storage }}
                                 </span>
                             </p>
                             <p class="card-text">Đơn giá:
                                 <span class="card-text" style="color: blue;">
-                                    120.000 VND
+                                    {{ product.price }}
                                 </span>
+                                VNĐ
                             </p>
-                            <p class="card-text">Bảo hành: 12 tháng</p>
-                            <p class="card-text">Đèn trợ sáng cho xe exciter. Hỗ trợ lắp đặt khi mua hàng trực tiếp
-                                tại shop.</p>
-                            <div class="d-grid gap-2">
-                                <button class="btn" mat-raised-button type="button">Thêm vào hóa đơn</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col d-flex justify-content-center">
-                    <div class="card" style="width: 17rem;">
-                        <img src="https://vn-test-11.slatic.net/p/8/den-led-lui-xi-nhan-phanh-6w-cho-xe-tai-o-to-xe-may-7405-01566653-e0ae20157f5e73f12ca9780c5b73d080.jpg_500x500Q80.jpg"
-                            class="card-img-top" alt="Sản phẩm" width="50px">
-                        <div class="card-body">
-                            <h2 class="card-title">Đèn T10</h2>
-                            <p class="card-text">Mã sản phẩm:
-                                <span class="card-text" style="color: blue;">
-                                    TX10
-                                </span>
-                            </p>
-                            <p class="card-text">Số lượng:
-                                <span class="card-text" style="color: blue;">
-                                    Hết hàng
-                                </span>
-                                &nbsp;&nbsp;
-                                <span class="card-text">
-                                    Kho lưu:
-                                </span>
-                                <span class="card-text" style="color: blue;">
-                                    R01C12
-                                </span>
-                            </p>
-                            <p class="card-text">Đơn giá:
-                                <span class="card-text" style="color: blue;">
-                                    120.000 VND
-                                </span>
-                            </p>
-                            <p class="card-text">Bảo hành: 12 tháng</p>
-                            <p class="card-text">Đèn trợ sáng cho xe exciter. Hỗ trợ lắp đặt khi mua hàng trực tiếp
-                                tại shop.</p>
-                            <div class="d-grid gap-2">
-                                <button class="btn" mat-raised-button type="button">Thêm vào hóa đơn</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col d-flex justify-content-center">
-                    <div class="card" style="width: 17rem;">
-                        <img src="data:image/jpeg;base64,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"
-                            class="card-img-top" alt="Sản phẩm" width="50px">
-                        <div class="card-body">
-                            <h2 class="card-title">Đèn pha</h2>
-                            <p class="card-text">Mã sản phẩm:
-                                <span class="card-text" style="color: blue;">
-                                    TX10
-                                </span>
-                            </p>
-                            <p class="card-text">Số lượng:
-                                <span class="card-text" style="color: blue;">
-                                    10
-                                </span>
-                                &nbsp;&nbsp;
-                                <span class="card-text">
-                                    Kho lưu:
-                                </span>
-                                <span class="card-text" style="color: blue;">
-                                    R01C12
-                                </span>
-                            </p>
-                            <p class="card-text">Đơn giá:
-                                <span class="card-text" style="color: blue;">
-                                    120.000 VND
-                                </span>
-                            </p>
-                            <p class="card-text">Bảo hành: 12 tháng</p>
-                            <p class="card-text">Đèn trợ sáng cho xe exciter. Hỗ trợ lắp đặt khi mua hàng trực tiếp
-                                tại shop.</p>
-                            <div class="d-grid gap-2">
-                                <button class="btn" mat-raised-button type="button">Thêm vào hóa đơn</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col d-flex justify-content-center">
-                    <div class="card" style="width: 17rem;">
-                        <img src="https://salt.tikicdn.com/cache/w444/ts/product/74/aa/b7/79a4aff64015b8088c55e0d59939fbc6.jpg"
-                            class="card-img-top" alt="Sản phẩm" width="50px">
-                        <div class="card-body">
-                            <h2 class="card-title">Đèn xi nhan</h2>
-                            <p class="card-text">Mã sản phẩm:
-                                <span class="card-text" style="color: blue;">
-                                    TX10
-                                </span>
-                            </p>
-                            <p class="card-text">Số lượng:
-                                <span class="card-text" style="color: blue;">
-                                    24
-                                </span>
-                                &nbsp;&nbsp;
-                                <span class="card-text">
-                                    Kho lưu:
-                                </span>
-                                <span class="card-text" style="color: blue;">
-                                    R01C12
-                                </span>
-                            </p>
-                            <p class="card-text">Đơn giá:
-                                <span class="card-text" style="color: blue;">
-                                    120.000 VND
-                                </span>
-                            </p>
-                            <p class="card-text">Bảo hành: 12 tháng</p>
-                            <p class="card-text">Đèn trợ sáng cho xe exciter. Hỗ trợ lắp đặt khi mua hàng trực tiếp
-                                tại shop.</p>
-                            <div class="d-grid gap-2">
-                                <button class="btn" mat-raised-button type="button">Thêm vào hóa đơn</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col d-flex justify-content-center">
-                    <div class="card" style="width: 17rem;">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuEMelPBKN3pjArzix40xfZmco2qHFW032zXqWPDF8rRTByEA0W1wGYeq47nyNgNOKIYDDaQ0&usqp=CAc"
-                            class="card-img-top" alt="Sản phẩm" width="50px">
-                        <div class="card-body">
-                            <h2 class="card-title">Công tắc SH</h2>
-                            <p class="card-text">Mã sản phẩm:
-                                <span class="card-text" style="color: blue;">
-                                    TX10
-                                </span>
-                            </p>
-                            <p class="card-text">Số lượng:
-                                <span class="card-text" style="color: blue;">
-                                    24
-                                </span>
-                                &nbsp;&nbsp;
-                                <span class="card-text">
-                                    Kho lưu:
-                                </span>
-                                <span class="card-text" style="color: blue;">
-                                    R01C12
-                                </span>
-                            </p>
-                            <p class="card-text">Đơn giá:
-                                <span class="card-text" style="color: blue;">
-                                    120.000 VND
-                                </span>
-                            </p>
-                            <p class="card-text">Bảo hành: 12 tháng</p>
-                            <p class="card-text">Đèn trợ sáng cho xe exciter. Hỗ trợ lắp đặt khi mua hàng trực tiếp
-                                tại shop.</p>
-                            <div class="d-grid gap-2">
-                                <button class="btn" mat-raised-button type="button">Thêm vào hóa đơn</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col d-flex justify-content-center">
-                    <div class="card" style="width: 17rem;">
-                        <img src="https://vn-test-11.slatic.net/p/1f8044fc5da26bd3413c3c7f8dd01fd4.jpg_360x360q90.jpg_.webp"
-                            class="card-img-top" alt="Sản phẩm" width="50px">
-                        <div class="card-body">
-                            <h2 class="card-title">Mạch công tắc</h2>
-                            <p class="card-text">Mã sản phẩm:
-                                <span class="card-text" style="color: blue;">
-                                    TX10
-                                </span>
-                            </p>
-                            <p class="card-text">Số lượng:
-                                <span class="card-text" style="color: blue;">
-                                    24
-                                </span>
-                                &nbsp;&nbsp;
-                                <span class="card-text">
-                                    Kho lưu:
-                                </span>
-                                <span class="card-text" style="color: blue;">
-                                    R01C12
-                                </span>
-                            </p>
-                            <p class="card-text">Đơn giá:
-                                <span class="card-text" style="color: blue;">
-                                    120.000 VND
-                                </span>
-                            </p>
-                            <p class="card-text">Bảo hành: 12 tháng</p>
-                            <p class="card-text">Đèn trợ sáng cho xe exciter. Hỗ trợ lắp đặt khi mua hàng trực tiếp
-                                tại shop.</p>
-                            <div class="d-grid gap-2">
-                                <button class="btn" mat-raised-button type="button">Thêm vào hóa đơn</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-
-
-                <div class="col d-flex justify-content-center">
-                    <div class="card" style="width: 17rem;">
-                        <img src="https://vn-test-11.slatic.net/p/1f8044fc5da26bd3413c3c7f8dd01fd4.jpg_360x360q90.jpg_.webp"
-                            class="card-img-top" alt="Sản phẩm" width="50px">
-                        <div class="card-body">
-                            <h2 class="card-title">Mạch công tắc</h2>
-                            <p class="card-text">Mã sản phẩm:
-                                <span class="card-text" style="color: blue;">
-                                    TX10
-                                </span>
-                            </p>
-                            <p class="card-text">Số lượng:
-                                <span class="card-text" style="color: blue;">
-                                    24
-                                </span>
-                                &nbsp;&nbsp;
-                                <span class="card-text">
-                                    Kho lưu:
-                                </span>
-                                <span class="card-text" style="color: blue;">
-                                    R01C12
-                                </span>
-                            </p>
-                            <p class="card-text">Đơn giá:
-                                <span class="card-text" style="color: blue;">
-                                    120.000 VND
-                                </span>
-                            </p>
-                            <p class="card-text">Bảo hành: 12 tháng</p>
-                            <p class="card-text">Đèn trợ sáng cho xe exciter. Hỗ trợ lắp đặt khi mua hàng trực tiếp
-                                tại shop.</p>
-                            <div class="d-grid gap-2">
-                                <button class="btn" mat-raised-button type="button">Thêm vào hóa đơn</button>
+                            <p class="card-text">Bảo hành: {{ product.warranty }} tháng</p>
+                            <p class="card-text">{{ product.description }}</p>
+                            <div class="d-grid gap-2" style="margin-bottom: 10px;">
+                                <button class="btn" mat-raised-button type="button" (click)="Add_Cart(product)">Thêm vào hóa đơn</button>
                             </div>
                         </div>
                     </div>

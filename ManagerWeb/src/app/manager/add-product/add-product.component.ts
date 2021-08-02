@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { CommonService } from 'src/app/services/common.service';
 
 @Component({
   selector: 'app-add-product',
@@ -9,22 +10,31 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class AddProductComponent implements OnInit {
 
   public information_product = new FormGroup({
-    name_product: new FormControl('', [Validators.required, Validators.minLength(3)]),
-    type_product: new FormControl('', [Validators.required, Validators.minLength(3)]),
-    code_product: new FormControl('', [Validators.required, Validators.minLength(3)]),
-    price_product: new FormControl('', [Validators.required, Validators.minLength(3)]),
-    quantity_product: new FormControl('', [Validators.required, Validators.minLength(3)]),
-    code_save_product: new FormControl('', [Validators.required, Validators.minLength(3)]),
-    photo_product: new FormControl('', [Validators.required, Validators.minLength(3)]),
-    description_product: new FormControl('')
+    name: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    type: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    code: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    price: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    warranty: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    quantity: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    storage: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    photo: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    description: new FormControl('')
   })
 
-  constructor() { }
+  constructor(
+    private common : CommonService
+  ) { }
 
   ngOnInit(): void {
   }
 
-  detail() {
-    console.log(this.information_product)
+  async detail() {
+    let result = await this.common.Add_Product(this.information_product.value)
+    if (result) {
+      alert("Thêm sản phẩm thành công.")
+      location.reload();
+    } else {
+      alert("Thêm sản phẩm thất bại! Có thể xảy ra lỗi trùng mã sản phẩm.")
+    }
   }
 }

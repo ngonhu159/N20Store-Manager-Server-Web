@@ -44,3 +44,8 @@
 .example-full-width {
     width: 100%;
 }
+
+img {
+    width: 16.8rem;
+    max-height: 10rem;
+}

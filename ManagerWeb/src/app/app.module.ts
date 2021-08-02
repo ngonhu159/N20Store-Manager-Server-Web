@@ -40,6 +40,9 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatBadgeModule } from '@angular/material/badge';
 
+//Interceptor
+import { HttpInterceptorInterceptor } from './services/http-interceptor.interceptor'
+
 // Components
 import { AddProductComponent } from './manager/add-product/add-product.component';
 import { HomeComponent } from './page/home/home.component';
@@ -95,7 +98,9 @@ import { ReceiptComponent } from './page/receipt/receipt.component';
     MatBadgeModule
     
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
