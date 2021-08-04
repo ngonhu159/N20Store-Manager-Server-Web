@@ -21,3 +21,10 @@ h3 {
 .mat-radio-button ~ .mat-radio-button {
     margin-left: 16px;
 }
+
+td, th {
+    text-align: center;
+    justify-content: center;
+    padding: auto;
+    vertical-align: middle;
+}

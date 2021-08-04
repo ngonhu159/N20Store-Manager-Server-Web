@@ -37,3 +37,15 @@ input {
     width: 60px; 
     margin-top: 0px !important;
 }
+
+td, th {
+    text-align: center;
+    justify-content: center;
+    padding: auto;
+    vertical-align: middle;
+}
+.btn-descrease {
+    min-width: 25px;
+    line-height: 20px;
+    padding: 0px !important;
+}

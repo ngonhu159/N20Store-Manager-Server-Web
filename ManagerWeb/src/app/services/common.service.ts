@@ -8,12 +8,11 @@ import { BehaviorSubject } from 'rxjs';
 export class CommonService {
   private REST_API_SERVER = "http://localhost:3000"
 
-  // product = new BehaviorSubject<any>([])
-  // listProduct = this.product.asObservable()
+  public cartService : any = []
 
   constructor(
     private http: HttpClient
-    ) { }
+  ) { }
 
   public Get_Product_Information() {
     let url = `${this.REST_API_SERVER}/get-product-information`

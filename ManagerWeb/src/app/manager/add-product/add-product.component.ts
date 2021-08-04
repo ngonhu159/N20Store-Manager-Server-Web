@@ -10,14 +10,14 @@ import { CommonService } from 'src/app/services/common.service';
 export class AddProductComponent implements OnInit {
 
   public information_product = new FormGroup({
-    name: new FormControl('', [Validators.required, Validators.minLength(3)]),
-    type: new FormControl('', [Validators.required, Validators.minLength(3)]),
-    code: new FormControl('', [Validators.required, Validators.minLength(3)]),
-    price: new FormControl('', [Validators.required, Validators.minLength(3)]),
-    warranty: new FormControl('', [Validators.required, Validators.minLength(3)]),
-    quantity: new FormControl('', [Validators.required, Validators.minLength(3)]),
-    storage: new FormControl('', [Validators.required, Validators.minLength(3)]),
-    photo: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    name: new FormControl('', [Validators.required, Validators.minLength(1)]),
+    type: new FormControl('', [Validators.required, Validators.minLength(1)]),
+    code: new FormControl('', [Validators.required, Validators.minLength(1)]),
+    price: new FormControl('', [Validators.required, Validators.minLength(1)]),
+    warranty: new FormControl('', [Validators.required, Validators.minLength(1)]),
+    quantity: new FormControl('', [Validators.required, Validators.minLength(1)]),
+    storage: new FormControl('', [Validators.required, Validators.minLength(1)]),
+    photo: new FormControl('', [Validators.required, Validators.minLength(1)]),
     description: new FormControl('')
   })
 
@@ -28,7 +28,7 @@ export class AddProductComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  async detail() {
+  async Detail() {
     let result = await this.common.Add_Product(this.information_product.value)
     if (result) {
       alert("Thêm sản phẩm thành công.")
