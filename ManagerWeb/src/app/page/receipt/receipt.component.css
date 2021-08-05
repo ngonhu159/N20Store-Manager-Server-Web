@@ -2,6 +2,15 @@
   background-color: rgb(255, 255, 255);
 }
 
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+  
+.example-full-width {
+    width: 100%;
+}
 
 .p-4 {
     margin: 0px !important;
@@ -27,4 +36,20 @@ td, th {
     justify-content: center;
     padding: auto;
     vertical-align: middle;
+}
+
+.btn-pdf {
+    margin-top: 50px;
+    text-align: center;
+    justify-content: center;
+    padding: auto;
+    vertical-align: middle;
+}
+
+.btn-pdf button {
+    margin: 10px 20px 10px 20px;
+}
+
+.btn-pdf button:hover {
+    background-color: rgb(18, 206, 11);
 }

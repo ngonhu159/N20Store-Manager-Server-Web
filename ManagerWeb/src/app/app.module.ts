@@ -48,6 +48,8 @@ import { AddProductComponent } from './manager/add-product/add-product.component
 import { HomeComponent } from './page/home/home.component';
 import { ProductComponent } from './manager/product/product.component';
 import { ReceiptComponent } from './page/receipt/receipt.component';
+import { EditProductComponent } from './manager/edit-product/edit-product.component';
+import { DeleteProductComponent } from './manager/delete-product/delete-product.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +57,9 @@ import { ReceiptComponent } from './page/receipt/receipt.component';
     AddProductComponent,
     HomeComponent,
     ProductComponent,
-    ReceiptComponent
+    ReceiptComponent,
+    EditProductComponent,
+    DeleteProductComponent
   ],
   imports: [
     BrowserModule,

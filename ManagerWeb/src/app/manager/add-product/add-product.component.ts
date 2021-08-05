@@ -28,7 +28,7 @@ export class AddProductComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  async Detail() {
+  async Add_Product() {
     let result = await this.common.Add_Product(this.information_product.value)
     if (result) {
       alert("Thêm sản phẩm thành công.")

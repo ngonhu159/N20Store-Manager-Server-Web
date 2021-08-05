@@ -56,7 +56,7 @@
                             </button>
                         </div>
                         <div class="d-grid gap-2">
-                            <button type="button" color="warn" class="btn" mat-raised-button>
+                            <button type="button" color="warn" class="btn" mat-raised-button (click)="Cancel_Receipt()">
                                 Hủy bỏ đơn hàng
                             </button>
                         </div>
@@ -108,7 +108,7 @@
                             <p class="card-text">Bảo hành: {{ product.warranty }} tháng</p>
                             <p class="card-text">{{ product.description }}</p>
                             <div class="d-grid gap-2" style="margin-bottom: 10px;">
-                                <button class="btn" mat-raised-button type="button" (click)="Add_Cart(product)">Thêm vào hóa đơn</button>
+                                <button class="btn" mat-raised-button type="button" (click)="Add_Product_Cart(product)">Thêm vào hóa đơn</button>
                             </div>
                         </div>
                     </div>

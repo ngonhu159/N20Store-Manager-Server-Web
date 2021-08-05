@@ -22,24 +22,28 @@ export class ProductComponent implements OnInit {
     this.listProduct = await this.common.Get_Product_Information()
   }
 
-  Add_Cart(product) {
-    let isProductAvailable = false
-    this.cart.forEach(element => {
-      if (element["code"] == product["code"]) {
-        isProductAvailable = true;
-      }
-    });
-    
-    if (isProductAvailable) {
-      alert("Sản phẩm này đã có trong hóa đơn.")
+  public Add_Product_Cart(product) {
+    if (product["quantity"] == 0) {
+      alert("Sản phẩm này đã hết hàng.")
     } else {
-      product["numberOf"] = 1;
-      this.cart.push(product)
-      this.common.cartService = this.cart
+      let isProductAvailable = false
+      this.cart.forEach(element => {
+        if (element["code"] == product["code"]) {
+          isProductAvailable = true;
+        }
+      });
+      
+      if (isProductAvailable) {
+        alert("Sản phẩm này đã có trong hóa đơn.")
+      } else {
+        product["numberOf"] = 1;
+        this.cart.push(product)
+        this.common.cartService = this.cart
+      }
     }
   }
 
-  Cancel_Product_Cart(product) {
+  public Cancel_Product_Cart(product) {
     let index = 0
     this.cart.forEach(element => {
       if (element["code"] == product["code"]) {
@@ -50,7 +54,7 @@ export class ProductComponent implements OnInit {
     this.common.cartService = this.cart
   }
 
-  Inscrease_Descrease_NumberOf(product, cmd) {
+  public Inscrease_Descrease_NumberOf(product, cmd) {
     if (cmd == "INSCREASE") {
       if (product["numberOf"] + 1 > product["quantity"]) {
         alert("Số lượng sản phẩm trong kho không đủ.")
@@ -66,5 +70,10 @@ export class ProductComponent implements OnInit {
         this.common.cartService = this.cart
       }
     }
+  }
+
+  public Cancel_Receipt() {
+    this.cart = []
+    this.common.cartService = this.cart
   }
 }

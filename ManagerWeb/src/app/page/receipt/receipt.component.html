@@ -44,40 +44,52 @@
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-lg-6">
-                <mat-radio-group aria-label="Select an option">
-                    <h2>Hình thức thanh toán:</h2>
-                    <mat-radio-button value="1" checked="true">Thanh toán tiền mặt</mat-radio-button>
-                    <mat-radio-button value="2">Thanh toán qua thẻ</mat-radio-button>
-                    <mat-radio-button value="3">Ship COD</mat-radio-button>
-                </mat-radio-group>
-                <br><br>
-                <h2 style="display: inline;">Người nhận:</h2>
-                <p>Nguyễn Văn B, 19/14 Tân Sơn, phường 12, quận Gò Vấp, thành phố Hồ Chí Minh. SĐT: 03931883xx</p>
-            </div>
+        <form [formGroup]="information_customer" (ngSubmit)="Payment_Receipt()">
+            <div class="row">
+                <div class="col-lg-6">
+                    <mat-radio-group aria-label="Select an option" formControlName="payment">
+                        <h2>Hình thức thanh toán:</h2>
+                        <mat-radio-button value="TM" checked="true">Tiền mặt</mat-radio-button>
+                        <mat-radio-button value="CK">Chuyển khoản</mat-radio-button>
+                        <mat-radio-button value="SC">Ship COD</mat-radio-button>
+                    </mat-radio-group>
+                    <br><br>
+                    <h2 style="display: inline;">Người nhận:</h2>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Thông tin người nhận</mat-label>
+                        <input matInput placeholder="Nguyễn Văn B" formControlName="customer" required>
+                    </mat-form-field>
+                </div>
 
-            <div class="col-lg-6" style="text-align: right;">
-                <mat-radio-group aria-label="Select an option">
-                    <h2>Nhân viên lập</h2><br><br><br>
-                    <p>NV. Nguyễn Văn A</p>
-                </mat-radio-group>
+                <div class="col-lg-6" style="text-align: right;">
+                    <mat-radio-group aria-label="Select an option">
+                        <br><h2>Nhân viên lập</h2><br><br><br>
+                        <p>NV. Nguyễn Văn A</p>
+                    </mat-radio-group>
+                </div>
             </div>
-        </div>
+            <div class="d-grid gap-2" style="margin-top: 10px;">
+                <button type="submit" color="primary" class="btn" mat-raised-button>
+                    Xuất hóa đơn
+                </button>
+            </div>
+        </form>
 
         <div class="d-grid gap-2" style="margin-top: 10px;">
-            <button type="button" color="primary" class="btn" mat-raised-button (click)="generatePdf('open')">
-                Xuất hóa đơn
-            </button>
-        </div>
-        <div class="d-grid gap-2" style="margin-top: 10px;">
-            <button type="button" color="warn" class="btn" mat-raised-button (click)="generatePdf('print')">
+            <button type="button" color="warn" class="btn" mat-raised-button (click)="Cancel_Receipt()">
                 Hủy hóa đơn
             </button>
         </div>
-        <div class="d-grid gap-2" style="margin-top: 10px;">
-            <button type="button" color="warn" class="btn" mat-raised-button (click)="generatePdf('download')">
-                Hủy hóa đơn
+
+        <div class="row btn-pdf">
+            <button mat-fab color="primary" aria-label="Example icon button with a delete icon" (click)="Generate_PDF('OPEN')">
+                <mat-icon>folder_open</mat-icon>
+            </button>
+            <button mat-fab color="primary" aria-label="Example icon button with a delete icon" (click)="Generate_PDF('PRINT')">
+                <mat-icon>print</mat-icon>
+            </button>
+            <button mat-fab color="primary" aria-label="Example icon button with a delete icon" (click)="Generate_PDF('DOWNLOAD')">
+                <mat-icon>cloud_download</mat-icon>
             </button>
         </div>
     </div>
